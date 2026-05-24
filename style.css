@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #0f0c29 0%, #1a1a3e 50%, #24243e 100%);
+  background: linear-gradient(135deg, #260c29 0%, #1a1a3e 50%, #260c29 100%);
   min-height: 100vh;
   color: #fff;
 }
@@ -54,7 +54,7 @@ header {
 header img {
   height: 70px;
   width: auto;
-  border-radius: 12px;
+  border-radius: 32px;
   transition: transform 0.3s ease;
 }
 
@@ -148,7 +148,7 @@ nav a:hover {
 
 #home h1 {
   font-size: 48px;
-  background: linear-gradient(135deg, #fff, #a8b8ff);
+  background: linear-gradient(135deg, #f8f6f6, #e9acf8);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -157,14 +157,14 @@ nav a:hover {
 
 #home p {
   font-size: 20px;
-  color: #c5c5e0;
+  color: #ebebfc;
   margin-bottom: 20px;
   line-height: 1.6;
 }
 
 #home h2 {
   font-size: 24px;
-  color: #a8b8ff;
+  color: #b9c4f8;
   margin-top: 30px;
 }
 
@@ -179,7 +179,7 @@ section:not(#home) {
 
 section:not(#home) h1 {
   font-size: 32px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #dcdde4, #c094ec);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
