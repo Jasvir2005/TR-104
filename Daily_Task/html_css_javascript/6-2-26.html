@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-2-26</title>
+    <style>
+        .heading {
+            background-color: rgb(96, 230, 248);
+            color: rgb(20, 12, 12);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <p id="p1">Hello, old message</p>
+    <button onclick="changeText()">Click me</button> -->
+
+    <!-- <h2 id="heading">this is a heading</h2>
+    <button onclick="changeColor()">Click me</button> -->
+    <h2 class="heading">Red</h2>
+    <h2 class="heading">Green</h2>
+    <h2 class="heading">Pink</h2>
+    <h2 class="heading">Sky blue</h2>
+    <button onclick="changeColor1()">New button</button>
+
+    <div class="h11">
+        <h2>this is heading</h2>
+    </div>
+    <button onclick="changeColor()">Click me</button>
+    <br><br>
+
+    <p id="para">this is a paragraph</p>
+    <button onclick="hide()">HIDE</button>
+
+    <script>
+        // function changeText(){
+        //     document.getElementById("p1").innerHTML="Byy this is new message";
+        // }
+
+        function changeColor1() {
+            document.getElementsByClassName("heading")[2].style.cssText = "background-color: purple; color: white; font-size: 20px; border:3px solid black; border-radius: 15px; padding-left: 50px;";
+        }
+
+        function changeColor() {
+            document.getElementsByClassName("h11")[0].style.cssText = "background-color: orange; color: green; font-size: 30px; border:3px solid black; border-radius: 20px; padding-left: 50px;";
+        }
+
+        function hide(){
+            document.getElementById("para").style.display="none";
+        }
+    </script>
+</body>
+
+</html>

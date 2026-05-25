@@ -1,0 +1,178 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(142, 101, 151);
+    display: inline-block;
+}
+
+.fade-in{
+    animation: fadeIn 10s;
+}
+
+@keyframes fadeIn {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+
+.fade-out{
+    animation: fadeOut 10s;
+}
+
+@keyframes fadeOut{
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+
+.zoom-in{
+    animation: zoomIn 10s;
+}
+
+@keyframes zoomIn{
+    from{transform: scale(0);}
+    to{transform: scale(1);}
+}
+
+.zoom-out{
+    animation: zoomOut 10s;
+}
+@keyframes zoomOut{
+    from{transform: scale(1);}
+    to{transform: scale(0);}
+}
+
+.rotate{
+    animation: rotate 4s linear;
+}
+
+@keyframes rotate {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+.pulse{
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
+
+.slide-left{
+    animation: slideLeft 2s;
+}
+
+@keyframes slideLeft{
+    from{transform: translateX(100px);}
+    to{transform: translateX(0);}
+}
+
+.slide-right{
+    animation: slideRight 2s;
+}
+
+@keyframes slideRight{
+    from{transform: translateX(-100px);}
+    to{transform: translateX(0);}
+}
+
+.slide-up{
+    animation: slideUp 2s;
+}
+
+@keyframes slideUp{
+    from{transform: translateY(100px);}
+    to{transform: translateY(0);}
+}
+
+.slide-down{
+    animation: slideDown 2s;
+}
+
+@keyframes slideDown{
+    from{transform: translateY(-100px);}
+    to{transform: translateY(0);}
+}
+
+.bounce{
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-30px);}
+    100%{transform: translateY(0);}
+}
+
+.shake{
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake{
+    0%{transform: translateX(0);}
+    25%{transform: translateX(-5px);}
+    50%{transform: translateX(5px);}
+    75%{transform: translateX(-5px);}
+    100%{transform: translateX(0);}
+}
+
+.flip{
+    animation: flip 3s;
+}
+
+@keyframes flip{
+    from{transform: rotateY(0deg);}
+    to{transform: rotateY(360deg);}
+}
+
+.swing{
+    animation: swing 2s;
+}
+
+@keyframes swing{
+    20%{transform: rotate(15deg);}
+    40%{transform: rotate(-10deg);}
+    60%{transform: rotate(5deg);}
+    80%{transform: rotate(-5deg);}
+    100%{transform: rotate(0deg);}
+}
+
+.blur-in{
+    animation: blurIn 5s;
+}
+
+@keyframes blurIn{
+    from{
+        filter: blur(10px);
+        opacity: 0;
+    }
+    to{
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.blur-out{
+    animation: blurOut 5s;
+}
+
+@keyframes blurOut{
+    from{
+        filter: blur(0);
+        opacity: 1;
+    }
+    to{
+        filter: blur(10px);
+        opacity: 0;
+    }
+}
+
+.glow{
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+    from{box-shadow: 0 0 5px red;}
+    to{box-shadow: 0 0 20px red;}
+}

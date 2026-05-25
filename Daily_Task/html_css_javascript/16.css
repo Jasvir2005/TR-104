@@ -1,0 +1,14 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(71, 243, 191);
+    display: inline-block;
+}
+
+.zoom-out{
+    animation: zoomOut 10s;
+}
+@keyframes zoomOut{
+    from{transform: scale(1);}
+    to{transform: scale(0);}
+}

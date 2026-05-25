@@ -1,0 +1,67 @@
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#eccefa;
+    font-family:Arial;
+}
+
+.atm{
+    background-color: rgb(247, 157, 224);
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(66, 61, 65);
+}
+
+.atm h2{
+    font-size: 45px;
+}
+
+.atm p{
+    font-size:15px;
+    font-weight:bold;
+}
+
+#balance{
+    margin-top: 5px;
+    font-size: 30px;
+}
+#amount{
+    margin: 10px;
+    width: 270px;
+    height: 40px;
+    border-radius: 15px;
+    padding-left: 5px;
+    text-decoration: none;
+    border: 2px solid rgb(54, 34, 59);
+}
+#deposit,
+#withdraw{
+    margin-bottom: 10px;
+    height: 40px;
+    width: 250px;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: rgb(78, 36, 78);
+    color: white;
+    border: 2px solid rgb(58, 25, 58);
+}
+#deposit:hover,
+#withdraw:hover{
+    background-color: rgb(248, 141, 200);
+}
+
+#msg{
+    margin-top:10px;
+    font-weight:bold;
+    color:green ;
+    font-size: 20px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="week2.css">
+</head>
+<body>
+    <h2>PERSONAL DETAIL</h2>
+    <form class="form"> 
+        <label for="fname">First Name</label>
+        <input type="text" placeholder="Enter your first name" required minlength="1">
+        <br><br>
+        <label for="lname">Last Name</label>
+        <input type="text" placeholder="Enter your last name" required minlength="1">
+        <br><br>
+        <label for="age">Age</label>
+        <input type="number" min="1" max="100" required>
+        <br><br>
+        <label for="email">E-mail</label>
+        <input type="email" placeholder="Enter your email" required>
+        <br><br>
+        <label for="contact">Contact</label>
+        <input type="tel" pattern="[0-9]{10}" placeholder="Enter your valid 10 digit no." required>
+        <br><br>
+        <label for="address">Address</label><br>
+        <textarea id="address" placeholder="Enter your address" required></textarea>
+        <br><br>
+        <label for="gender">Gender</label><br><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <br><br>
+        <label for="skills">Skills</label><br><br>
+        <input type="checkbox" id="html/css" name="skills" value="html/css">
+        <label for="html/css">HTML/CSS</label>
+        <input type="checkbox" id="java" name="skills" value="java">
+        <label for="java">Java</label>
+        <input type="checkbox" id="python" name="skills" value="python">
+        <label for="python">Python</label>
+        <input type="checkbox" id="php" name="skills" value="php">
+        <label for="php">PHP</label>
+        <br><br>
+        <label for="date">DOB</label>
+        <input type="date" required>
+        <br><br>
+        <label for="time">Time</label>
+        <input type="time" required>
+        <br><br>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required><br></br>
+        <label for="pwd">Password</label>
+        <input type="password" id="pwd" name="pwd" required>
+        <br><br>
+        <label for="myfile">Select a File</label><br>
+        <input type="file" id="myfile" name="myfile" required>
+        <br><br>
+        <label for="myimage">Select a Image</label><br>
+        <input type="file" id="myimage" name="myimage" accept="image/*" required>
+        <br><br>
+        <label for="vol">Volume (between 0 and 50)</label><br><br>
+        <input type="range" id="vol" name="vol" min="0" max="50" required>
+        <br><br>
+        <label for="homepage">Add your Homepage</label>
+        <input type="url" id="homepage" name="homepage" placeholder="Enter your url" required>
+        <br><br>
+        <button class="btn">SUBMIT</button>
+    </form>
+
+</body>
+</html>
