@@ -47,6 +47,7 @@ export default function Chat() {
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [showImageModal, setShowImageModal] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   // ================= AUTO SCROLL =================
   useEffect(() => {
@@ -331,8 +332,16 @@ export default function Chat() {
     }
   };
 
-  // ================= DELETE CHAT =================
-  const deleteChat = async () => {
+  // ================= DELETE CHAT WITH CONFIRMATION =================
+  const confirmDeleteChat = () => {
+    setShowDeleteConfirm(true);
+  };
+
+  const cancelDeleteChat = () => {
+    setShowDeleteConfirm(false);
+  };
+
+  const handleDeleteChat = async () => {
     if (!selected) return;
     try {
       await axios.put("http://localhost:5000/delete-chat", {
@@ -341,7 +350,8 @@ export default function Chat() {
       });
       const res = await axios.get(`http://localhost:5000/messages/${user._id}/${selected._id}`);
       setMessages(res.data);
-      toast.success("Chat deleted!");
+      toast.success("Chat deleted successfully!");
+      setShowDeleteConfirm(false);
     } catch (err) {
       console.log(err);
       toast.error("Failed to delete chat");
@@ -349,6 +359,12 @@ export default function Chat() {
   };
 
   // ================= EDIT MESSAGE =================
+
+  const cancelEdit = () => {
+    setEditingId(null);
+    setEditText("");
+  };
+
   const editMessage = async (id) => {
     try {
       const res = await axios.put(`http://localhost:5000/message/${id}`, { text: editText });
@@ -396,6 +412,27 @@ export default function Chat() {
     <div className="main-chat-container">
       
       <ToastContainer position="top-right" autoClose={3000} theme="dark" />
+
+      {/* DELETE CONFIRMATION MODAL */}
+      {showDeleteConfirm && (
+        <div className="delete-confirm-overlay">
+          <div className="delete-confirm-modal">
+            <div className="delete-confirm-icon">
+              <RiDeleteBin5Fill size={50} color="#ff2e7a" />
+            </div>
+            <h3>Delete Chat?</h3>
+            <p>Are you sure you want to delete all messages with <strong>{selected?.name}</strong>? This action cannot be undone.</p>
+            <div className="delete-confirm-buttons">
+              <button className="cancel-delete-btn" onClick={cancelDeleteChat}>
+                Cancel
+              </button>
+              <button className="confirm-delete-btn" onClick={handleDeleteChat}>
+                Yes, Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* LEFT SIDEBAR */}
       <div className="left-sidebar">
@@ -498,7 +535,7 @@ export default function Chat() {
                 </span>
               </div>
             </div>
-            <button className="delete-chat-button" onClick={deleteChat}>
+            <button className="delete-chat-button" onClick={confirmDeleteChat}>
               <RiDeleteBin5Fill size={16} />  Delete Chat
             </button>
           </div>
@@ -538,6 +575,9 @@ export default function Chat() {
                         autoFocus
                       />
                       <button onClick={() => editMessage(m._id)} className="save-edit-btn"><IoSend /></button>
+                      <button onClick={cancelEdit} className="cancel-edit-btn" title="Cancel">
+                          <RxCross2 size={16} />
+                        </button> 
                     </div>
                   ) : (
                     <>
