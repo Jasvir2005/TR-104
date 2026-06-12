@@ -9,6 +9,5 @@ export default function PrivateRoute({ children }) {
     return <Navigate to="/login" replace />;
   }
 
-  // Agar login hai to child component dikhao
   return children;
 }

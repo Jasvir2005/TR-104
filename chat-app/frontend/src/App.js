@@ -15,14 +15,17 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public Routes - without login (kise vi time open ho sakde) */}
+        
         <Route path="/" element={<Welcome/>}/>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/verify-otp" element={<VerifyOtp />} /> 
+        <Route path="/reset-password" element={<ResetPassword /> } />
+        <Route path="/success" element={<Success />} />
         
         
         {/* Protected Routes - login required (direct open nahi ho sakde) */}
-        
         <Route 
           path="/chat" 
           element={
@@ -39,29 +42,7 @@ function App() {
             </PrivateRoute>
           } 
         />
-        <Route path="/forgot-password" element={
-          <PrivateRoute>
-            <ForgotPassword />
-          </PrivateRoute>
-          } />
 
-         <Route path="/verify-otp" element={
-          <PrivateRoute>
-            <VerifyOtp />
-          </PrivateRoute>
-          } /> 
-
-          <Route path="/reset-password" element={
-          <PrivateRoute>
-            <ResetPassword />
-          </PrivateRoute>
-          } />
-
-          <Route path="/success" element={
-          <PrivateRoute>
-            <Success />
-          </PrivateRoute>
-          } />
         
         {/* Agar koi unknown path ho to login pe bhejo */}
         <Route path="*" element={<Navigate to="/login" replace />} />

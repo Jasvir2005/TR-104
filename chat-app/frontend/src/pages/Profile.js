@@ -92,7 +92,7 @@ export default function Profile() {
             </div>
           </div>
 
-          {/* Right Side - Edit Form */}
+          {/* Right Side */}
           <div className="profile-right">
             <div className="edit-form">
               <div className="form-group">

@@ -6,7 +6,7 @@ const http = require("http");
 const { Server } = require("socket.io");
 
 const Message = require("./models/Message");
-const User = require("./models/User"); // ✅ add this
+const User = require("./models/User");
 const auth = require("./middleware/auth");
 const uploadRoutes = require("./routes/upload");
 
@@ -29,7 +29,7 @@ app.use("/users", require("./routes/users"));
 app.use("/uploads", express.static("uploads"));
 app.use("/upload", uploadRoutes);
 
-let users = {}; // online users
+let users = {};
 
 // ✅ GET USERS
 app.get("/users", auth, async (req, res) => {
@@ -37,7 +37,7 @@ app.get("/users", auth, async (req, res) => {
   res.json(allUsers);
 });
 
-// ✅ UPDATE PROFILE - FIXED (new: true → returnDocument: 'after')
+// ✅ UPDATE PROFILE
 app.put("/update-profile/:id", async (req, res) => {
 
   try {
@@ -54,7 +54,7 @@ app.put("/update-profile/:id", async (req, res) => {
         },
 
         {
-          returnDocument: 'after'  // ✅ FIXED: was { new: true }
+          returnDocument: 'after'  
         }
 
       );
@@ -142,7 +142,7 @@ app.delete("/message/:id", async (req, res) => {
 
 });
 
-// ✅ EDIT MESSAGE - FIXED (new: true → returnDocument: 'after')
+// ✅ EDIT MESSAGE
 app.put("/message/:id", async (req, res) => {
 
   try {
@@ -156,7 +156,7 @@ app.put("/message/:id", async (req, res) => {
       },
 
       {
-        returnDocument: 'after'  // ✅ FIXED: was { new: true }
+        returnDocument: 'after'  
       }
 
     );
